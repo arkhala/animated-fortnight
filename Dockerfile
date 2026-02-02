@@ -27,8 +27,7 @@ RUN mkdir -p /var/lib/tor /var/log/tor /data \
 
 # Copy scripts
 COPY entrypoint.sh /entrypoint.sh
-COPY stats.sh /stats.sh
-RUN chmod +x /entrypoint.sh /stats.sh
+RUN chmod +x /entrypoint.sh
 
 # Persistent data
 VOLUME ["/data"]
