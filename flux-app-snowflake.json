@@ -1,0 +1,28 @@
+{
+  "name": "torware-snowflake",
+  "description": "Snowflake WebRTC Proxy",
+  "version": 1,
+  "compose": [
+    {
+      "name": "snowflake",
+      "description": "Snowflake Proxy for censored users",
+      "repotag": "ghcr.io/arkhala/torware:minimal",
+      "ports": [],
+      "containerPorts": [],
+      "environmentParameters": [
+        "MODE=snowflake",
+        "SNOWFLAKE_CAPACITY=10",
+        "STATS_INTERVAL=300"
+      ],
+      "commands": [],
+      "containerData": "/data",
+      "cpu": 0.3,
+      "ram": 64,
+      "hdd": 1,
+      "tiered": false
+    }
+  ],
+  "instances": 5,
+  "contacts": [],
+  "geolocation": []
+}

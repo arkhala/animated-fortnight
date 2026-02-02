@@ -1,0 +1,36 @@
+{
+  "name": "torware-full",
+  "description": "Tor Bridge + Snowflake Proxy",
+  "version": 1,
+  "compose": [
+    {
+      "name": "tor",
+      "description": "Bridge + Snowflake",
+      "repotag": "ghcr.io/arkhala/torware:minimal",
+      "ports": [
+        {"port": 9001, "tcp": true},
+        {"port": 9002, "tcp": true}
+      ],
+      "containerPorts": [
+        {"port": 9001, "tcp": true},
+        {"port": 9002, "tcp": true}
+      ],
+      "environmentParameters": [
+        "MODE=bridge+snowflake",
+        "NICKNAME=FluxTorNode",
+        "BANDWIDTH=5",
+        "SNOWFLAKE_CAPACITY=10",
+        "STATS_INTERVAL=300"
+      ],
+      "commands": [],
+      "containerData": "/data",
+      "cpu": 0.6,
+      "ram": 120,
+      "hdd": 1,
+      "tiered": false
+    }
+  ],
+  "instances": 3,
+  "contacts": [],
+  "geolocation": []
+}

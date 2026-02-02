@@ -1,0 +1,35 @@
+{
+  "name": "torware-bridge",
+  "description": "Tor Bridge Relay (obfs4)",
+  "version": 1,
+  "compose": [
+    {
+      "name": "tor",
+      "description": "Tor Bridge with obfs4",
+      "repotag": "ghcr.io/arkhala/torware:minimal",
+      "ports": [
+        {"port": 9001, "tcp": true},
+        {"port": 9002, "tcp": true}
+      ],
+      "containerPorts": [
+        {"port": 9001, "tcp": true},
+        {"port": 9002, "tcp": true}
+      ],
+      "environmentParameters": [
+        "MODE=bridge",
+        "NICKNAME=FluxBridge",
+        "BANDWIDTH=5",
+        "STATS_INTERVAL=300"
+      ],
+      "commands": [],
+      "containerData": "/data",
+      "cpu": 0.5,
+      "ram": 100,
+      "hdd": 1,
+      "tiered": false
+    }
+  ],
+  "instances": 3,
+  "contacts": [],
+  "geolocation": []
+}
